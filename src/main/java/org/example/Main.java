@@ -6,7 +6,12 @@ import java.util.logging.Logger;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static final Logger LOGGER = Logger.getLogger(Main.class.getName());
-    record Human(String fname){}
+    /* Canonical Constructor */
+    record Human(String fname){
+        Human(String fname){
+            this.fname = fname.toUpperCase();
+        }
+    }
     public static void main(String[] args) {
         var person = new Human("John");
         LOGGER.info("Human name: " + person.fname());
