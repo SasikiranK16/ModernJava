@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Objects;
 import java.util.logging.Logger;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -9,11 +10,12 @@ public class Main {
     /* Canonical Constructor */
     record Human(String fname){
         Human(String fname){
+            Objects.requireNonNull(fname, "fname is null");
             this.fname = fname.toUpperCase();
         }
     }
     public static void main(String[] args) {
-        var person = new Human("John");
+        var person = new Human("Hellos");
         LOGGER.info("Human name: " + person.fname());
     }
 }
