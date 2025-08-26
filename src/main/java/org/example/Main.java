@@ -18,4 +18,5 @@ public class Main {
         var person = new Human("Hellos");
         LOGGER.info("Human name: " + person.fname());
     }
+    Hello
 }
